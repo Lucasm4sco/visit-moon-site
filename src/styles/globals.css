@@ -16,13 +16,20 @@
   }
 }
 
-html, body {
+html,
+body {
   font-size: 10px;
 }
 
 .container-limit {
-  max-width: 1840px;
+  max-width: 1640px;
   margin: auto;
+}
+
+.hightlighted-text-opacity {
+  background-image: linear-gradient(to right, rgba(136,154,201,1) 0%, rgba(136, 154, 201, 0) 42%,rgba(136, 154, 201, 0) 50%, rgba(136,154,201,1) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 * {
@@ -33,7 +40,8 @@ html, body {
 }
 
 @media (max-width:1300px) {
-  html, body {
+  html,
+  body {
     font-size: 8px;
   }
 }

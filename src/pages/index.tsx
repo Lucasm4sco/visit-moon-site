@@ -1,11 +1,12 @@
-import MoonAnimated from './moon-animated';
+import SectionMoonAnimated from "@/components/SectionMoonAnimated";
 
 export default function Page() {
   return (
     <>
       <title>Visit moon</title>
+
       <main>
-        <MoonAnimated />
+        <SectionMoonAnimated />
       </main>
     </>
   )

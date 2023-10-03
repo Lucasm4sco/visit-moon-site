@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from 'three';
 import { OrbitControls } from '@react-three/drei';
@@ -6,14 +6,21 @@ import { OrbitControls } from '@react-three/drei';
 const texture = '/img/moon-texture.jpg';
 const displacement = '/img/moon-texture-2.jpg';
 
-function Moon(props: any) {
+function Moon(
+    { isControlActive }: { isControlActive: boolean }
+) {
     const meshRef = useRef<any>(null);
     const [moonTexture, moonDisplacement] = useLoader(TextureLoader, [texture, displacement]);
-    
-    useFrame(() => meshRef.current.rotation.y += 0.005);
+
+    useFrame(() => {
+        if (isControlActive)
+            return;
+
+        meshRef.current.rotation.y += 0.005
+    });
 
     return (
-        <mesh ref={meshRef} {...props} >
+        <mesh ref={meshRef} >
             <sphereGeometry args={[3, 60, 60]} />
             <meshPhongMaterial
                 shininess={0}
@@ -30,21 +37,30 @@ function Moon(props: any) {
     )
 }
 
-export default function MoonAnimated() {
+type MoonAnimatedProps = {
+    sizeMoon: {
+        [key: string]: string | number
+    },
+    className?: string
+}
+
+export default function MoonAnimated({ sizeMoon, className }: MoonAnimatedProps) {
+    const [isControlActive, setIsControlActive] = useState(false);
+
     return (
         <Canvas
-            style={{
-                width: "50vw",
-                height: "50vw",
-                maxHeight: 550,
-                maxWidth: 550,
-                margin: 'auto',
-                cursor: 'pointer',
-                borderRadius: '50%'
-            }}
+            style={sizeMoon}
+            className={className}
         >
-            <Moon />
-            <OrbitControls makeDefault />
+            <Moon
+                isControlActive={isControlActive}
+            />
+            <OrbitControls
+                makeDefault
+                onStart={() => setIsControlActive(true)}
+                onEnd={() => setIsControlActive(false)}
+                enableZoom={false}
+            />
         </Canvas>
     );
 }
