@@ -36,21 +36,21 @@ export default function SectionMoonAnimated() {
                             className="rounded-full cursor-pointer"
                         />
                         <span
-                            className="block w-[1%] h-[1%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white"
+                            className="block w-[2.54%] h-[2.54%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white animate-circle-1"
                             style={{
-                                transform: 'rotate(120deg) translate(5000%)'
+                                transform: 'rotate(90deg) translate(1980%)'
                             }}
                         />
                         <span
-                            className="block w-[1%] h-[1%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white"
+                            className="block w-[2.54%] h-[2.54%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white animate-circle-2"
                             style={{
-                                transform: 'rotate(240deg) translate(5000%)'
+                                transform: 'rotate(180deg) translate(1980%)'
                             }}
                         />
                         <span
-                            className="block w-[1%] h-[1%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white"
+                            className="block w-[2.54%] h-[2.54%] absolute top-0 left-0 right-0 bottom-0 m-auto rounded-full bg-white animate-circle-3"
                             style={{
-                                transform: 'rotate(0deg) translate(5000%)'
+                                transform: 'rotate(270deg) translate(1980%)'
                             }}
                         />
                     </div>
