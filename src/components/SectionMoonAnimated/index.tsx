@@ -10,14 +10,15 @@ const sizeMoon = {
 export default function SectionMoonAnimated() {
     return (
         <section>
-            <div className="container-limit relative flex-col justify-beetwen items-center">
+            <div className="container-limit flex items-center flex-col ">
                 <div
                     style={{
                         height: sizeMoon.height,
                         maxHeight: sizeMoon.maxHeight
                     }}
+                    className="relative"
                 >
-                    <div className="absolute left-1/2 translate-x-[-52%] top-1/2 translate-y-[-52%]">
+                    <div className="absolute left-1/2 translate-x-[-52%] top-1/2 translate-y-[-40%]">
                         <h1 className="font-medium text-[30rem] text-highlighted whitespace-nowrap hightlighted-text-opacity">
                             MO
                             <span
@@ -55,7 +56,19 @@ export default function SectionMoonAnimated() {
                         />
                     </div>
                 </div>
-                <p className="text-white text-[2.2rem] text-center m-40">Visite a lua, deixe sua marca.</p>
+                <p className="text-white text-[2.4em] mt-40">Visite a lua, deixe sua marca.</p>
+                <p className="text-white text-[2.4rem] mt-10 font-black">Comprar passagens</p>
+                <div className="w-[45px] h-[45px] mt-14 border-2 rounded-full">
+                    <span className="block w-full h-full relative animate-bounce">
+                        <span
+                            className="
+                            block absolute bg-white w-[2px] h-[41px] left-1/2 translate-x-[-50%] top-[-45%]
+                            before:block before:absolute before:bg-white before:w-[2px] before:h-[12px] before:left-[-4px]  before:top-[80%] before:rotate-[-45deg]
+                            after:block after:absolute after:bg-white after:w-[2px] after:h-[12px] after:left-[4px]  after:top-[80%] after:rotate-[45deg]
+                            "
+                        />
+                    </span>
+                </div>
             </div>
         </section>
     )
