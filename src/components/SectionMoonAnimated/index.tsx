@@ -10,7 +10,7 @@ const sizeMoon = {
 export default function SectionMoonAnimated() {
     return (
         <section>
-            <div className="container-limit relative flex-col justify-center items-center">
+            <div className="container-limit relative flex-col justify-beetwen items-center">
                 <div
                     style={{
                         height: sizeMoon.height,
@@ -55,6 +55,7 @@ export default function SectionMoonAnimated() {
                         />
                     </div>
                 </div>
+                <p className="text-white text-[2.2rem] text-center m-40">Visite a lua, deixe sua marca.</p>
             </div>
         </section>
     )
