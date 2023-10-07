@@ -10,8 +10,8 @@ const sizeMoon = {
 export default function SectionMoonAnimated() {
 
     return (
-        <section>
-            <div className="container-limit flex items-center flex-col ">
+        <section className="pt-24 lg:pt-2">
+            <div className="container-limit flex items-center flex-col">
                 <div
                     style={{
                         height: sizeMoon.height,
@@ -20,7 +20,7 @@ export default function SectionMoonAnimated() {
                     className="relative"
                 >
                     <div className="absolute left-1/2 translate-x-[-52%] top-1/2 translate-y-[-40%]">
-                        <h1 className="font-medium text-[20vw] text-highlighted whitespace-nowrap hightlighted-text-opacity">
+                        <h1 className="font-medium text-[10vw] sm:text-[20vw] 2xl:text-[30rem] text-highlighted whitespace-nowrap hightlighted-text-opacity">
                             MO
                             <span
                                 className="inline-block"
@@ -32,7 +32,7 @@ export default function SectionMoonAnimated() {
                             ON
                         </h1>
                     </div>
-                    <div className="relative p-4 left-1/2 translate-x-[-50%] border-2 rounded-full">
+                    <div className="relative p-4  border md:border-2 rounded-full">
                         <MoonAnimated
                             sizeMoon={sizeMoon}
                             className="rounded-full cursor-pointer"
@@ -56,7 +56,7 @@ export default function SectionMoonAnimated() {
                 </div>
                 <p className="text-white text-[2.4em] mt-40">Visite a lua, deixe sua marca.</p>
                 <p className="text-white text-[2.4rem] mt-10 font-black">Comprar passagens</p>
-                <div className="w-[45px] h-[45px] mt-14 border-2 rounded-full">
+                <a href="#" className="w-[45px] h-[45px] mt-20 border-2 rounded-full">
                     <span className="block w-full h-full relative animate-bounce">
                         <span
                             className="
@@ -66,7 +66,7 @@ export default function SectionMoonAnimated() {
                             "
                         />
                     </span>
-                </div>
+                </a>
             </div>
         </section>
     )
