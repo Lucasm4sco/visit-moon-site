@@ -11,7 +11,7 @@ export default function SectionMoonAnimated() {
 
     return (
         <section className="pt-24 lg:pt-2">
-            <div className="container-limit flex items-center flex-col">
+            <div className="container-limit flex items-center flex-col  min-h-[70vh] justify-center">
                 <div
                     style={{
                         height: sizeMoon.height,
@@ -54,6 +54,7 @@ export default function SectionMoonAnimated() {
                         </span>
                     </div>
                 </div>
+
                 <p className="text-white text-[2.4em] mt-40">Visite a lua, deixe sua marca.</p>
                 <p className="text-white text-[2.4rem] mt-10 font-black">Comprar passagens</p>
                 <a href="#" className="w-[45px] h-[45px] mt-20 border-2 rounded-full">
