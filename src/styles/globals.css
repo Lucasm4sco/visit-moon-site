@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: 'Ariegard';
   src: url('/fonts/ariergard-rondo-book.otf');
@@ -51,6 +50,6 @@ body {
 @media (max-width:1300px) {
   html,
   body {
-    font-size: 8px;
+    font-size: 9px;
   }
 }

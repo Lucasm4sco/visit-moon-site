@@ -18,13 +18,16 @@ const config: Config = {
       },
       keyframes: {
         'circle-1': {
-          '100%': { transform: 'rotate(-630deg) translate(1980%)' }
+          '0%': { transform: 'rotate(90deg)' },
+          '100%': { transform: 'rotate(-630deg)' }
         },
         'circle-2': {
-          '100%': { transform: 'rotate(-540deg) translate(1980%)' }
+          '0%': { transform: 'rotate(180deg)' },
+          '100%': { transform: 'rotate(-540deg)' }
         },
         'circle-3': {
-          '100%': { transform: 'rotate(-450deg) translate(1980%)' }
+          '0%': { transform: 'rotate(270deg)' },
+          '100%': { transform: 'rotate(-450deg)' }
         }
       }
     },
