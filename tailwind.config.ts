@@ -16,8 +16,8 @@ const config: Config = {
         'circle-1': 'circle-1 18s linear infinite',
         'circle-2': 'circle-2 23s linear infinite',
         'circle-3': 'circle-3 30s linear infinite',
-        // menu hamburguer
-        'span-1': 'span-1 .2s forwards'
+        // information about the moon
+        'ballon': 'ballon .7s linear forwards'
       },
       keyframes: {
         // circles around the moon
@@ -33,10 +33,9 @@ const config: Config = {
           '0%': { transform: 'rotate(270deg)' },
           '100%': { transform: 'rotate(-450deg)' }
         },
-        // menu hamburguer
-        'span-1': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(45deg)', top: '18px' }
+        // information about the moon
+        'ballon': {
+          '100%': { width: '85rem'  }
         }
       }
     },
