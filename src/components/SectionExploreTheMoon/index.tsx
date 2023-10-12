@@ -7,10 +7,10 @@ export default function SectionExploreTheMoon() {
     circle_3: false,
   });
 
-  const handleBallons = (key: 'circle_1' | 'circle_2' | 'circle_3') => setBalloonsOpened(prev => ({ ...prev, [key]: !prev[key] }));
+  const handleBallons = (key: 'circle_1' | 'circle_2' | 'circle_3') => setBalloonsOpened(prev => ({ ...prev, [key]: true }));
 
   return (
-    <section className="pt-60 p-[10vw] pb-40 lg:pr-0 lg:pl-0">
+    <section className="pt-60 p-[10vw] pb-80 lg:pr-0 lg:pl-0">
       <div className="max-w-[1100px] m-auto text-center lg:text-start">
         <h2 className="text-[3.4rem] lg:text-[5.5rem] text-white font-medium p-2 lg:indent-20">
           Explore a Lua

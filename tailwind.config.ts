@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'highlighted': '#889AC9'
+        'highlighted': '#889AC9',
+        'gray-theme': '#464646'
       },
       animation: {
         // circles around the moon
@@ -17,7 +18,12 @@ const config: Config = {
         'circle-2': 'circle-2 23s linear infinite',
         'circle-3': 'circle-3 30s linear infinite',
         // information about the moon
-        'ballon': 'ballon .7s linear forwards'
+        'ballon': 'ballon .7s linear forwards',
+        // text infinite animation
+        'text-left-1': 'to-left-1 20s linear infinite',
+        'text-left-2': 'to-left-2 20s 10s linear infinite',
+        'text-right-1': 'to-right-1 20s linear infinite',
+        'text-right-2': 'to-right-2 20s 10s linear infinite'
       },
       keyframes: {
         // circles around the moon
@@ -35,7 +41,24 @@ const config: Config = {
         },
         // information about the moon
         'ballon': {
-          '100%': { width: '85rem'  }
+          '100%': { width: '85rem' }
+        },
+        // text infinite anim,ation
+        'to-left-1': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' }
+        },
+        'to-left-2': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-200%)' }
+        },
+        'to-right-1': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        },
+        'to-right-2': {
+          '0%': { transform: 'translateX(-200%)' },
+          '100%': { transform: 'translateX(0%)' }
         }
       }
     },
