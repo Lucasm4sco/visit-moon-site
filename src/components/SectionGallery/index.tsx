@@ -1,6 +1,6 @@
 export default function SectionGallery() {
     return (
-        <section >
+        <section id="gallery">
             <div className="max-w-[1100px] m-auto text-center lg:text-start">
                 <h2 className="text-[3.4rem] lg:text-[5.5rem] text-white font-medium p-2 lg:indent-20">
                     Galeria
@@ -20,7 +20,7 @@ export default function SectionGallery() {
                         src="/img/gallery-1.png"
                         alt=""
                     />
-                   
+
                     <img
                         className="absolute right-full inline-block min-w-[200px] scale-[0.95] h-full"
                         src="/img/gallery-3.png"

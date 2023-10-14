@@ -7,10 +7,10 @@ export default function Heading() {
     const handleNavBurguer = () => setIsNavOpen(prev => !prev);
 
     return (
-        <header className="px-[30px] py-[30px] md:px-[72px] md:py-[60px] ">
+        <header className="px-[30px] py-[30px] md:px-[72px] md:py-[60px]" id="visit-moon">
             <div className="container-limit">
                 <nav className="flex items-center justify-between " aria-label="Global">
-                    <a href="#" className="flex">
+                    <a href="#visit-moon" className="flex">
                         <span className="text-[4.4rem] text-highlighted font-medium">visit moon</span>
                     </a>
                     <div className={styles.menu_mobile}>
@@ -20,16 +20,16 @@ export default function Heading() {
                         <span></span>
                         <ul className={styles.menu_container}>
                             <li className="m-14">
-                                <a href="#" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Sobre a lua</a>
+                                <a href="#about-the-moon" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Sobre a lua</a>
                             </li>
                             <li className="m-14">
-                                <a href="#" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Fila de espera</a>
+                                <a href="#orders" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Fila de espera</a>
                             </li>
                             <li className="m-14">
                                 <a href="#" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Comprar passagem</a>
                             </li>
                             <li className="m-14">
-                                <a href="#" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Galeria</a>
+                                <a href="#gallery" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Galeria</a>
                             </li>
                             <li className="m-14">
                                 <a href="#" onClick={handleNavBurguer} className="p-2 text-[2rem] text-white font-normal hover:font-bold">Contato</a>
@@ -38,16 +38,16 @@ export default function Heading() {
                     </div>
                     <ul className='hidden xl:flex'>
                         <li>
-                            <a href="#" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Sobre a lua</a>
+                            <a href="#about-the-moon" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Sobre a lua</a>
                         </li>
                         <li>
-                            <a href="#" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Fila de espera</a>
+                            <a href="#orders" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Fila de espera</a>
                         </li>
                         <li>
                             <a href="#" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Comprar passagem</a>
                         </li>
                         <li>
-                            <a href="#" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Galeria</a>
+                            <a href="#gallery" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Galeria</a>
                         </li>
                         <li>
                             <a href="#" className="p-12 text-[2.2rem] text-white font-normal hover:font-bold">Contato</a>

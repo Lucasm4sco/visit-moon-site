@@ -31,7 +31,7 @@ export default function SectionHowToExplore() {
     }
 
     return (
-        <section className="pt-60 xl:p-60 pb-60 min-h-full lg:pb-80 overflow-hidden">
+        <section id="orders" className="pt-60 xl:p-60 pb-60 min-h-full lg:pb-80 overflow-hidden">
             <div className="max-w-[1100px] m-auto text-center lg:text-start">
                 <h2 className="text-[3.4rem] lg:text-[5.5rem] text-white font-medium p-2 lg:indent-20">
                     Como visitar a Lua
