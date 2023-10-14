@@ -24,7 +24,7 @@ const config: Config = {
         'text-left-2': 'to-left-2 20s 10s linear infinite',
         'text-right-1': 'to-right-1 20s linear infinite',
         'text-right-2': 'to-right-2 20s 10s linear infinite',
-        // 
+        // lines
         'width-full': 'width-full 1s linear forwards'
       },
       keyframes: {
@@ -62,6 +62,7 @@ const config: Config = {
           '0%': { transform: 'translateX(-200%)' },
           '100%': { transform: 'translateX(0%)' }
         },
+        // lines
         'width-full': {
           '100%': { width: '100%' }
         },
