@@ -2,7 +2,7 @@ import tickets from "./tickets";
 
 export default function SectionBuyTicket() {
     return (
-        <section id="buy-a-ticket" className="pt-60 p-10 pb-60 lg:pb-80">
+        <section id="buy-a-ticket" className="pt-60 p-10 pb-40 lg:pb-0">
             <div className="max-w-[1100px] m-auto text-center lg:text-start">
                 <h2 className="text-[3.4rem] lg:text-[5.5rem] text-white font-medium p-2 lg:indent-20">
                     Passagens disponíveis

@@ -18,6 +18,7 @@ export default function Page() {
         <SectionGallery />
         <SectionHowToExplore />
         <SectionBuyTicket />
+        <SectionTextInfinite text="to the space"/>
       </main>
     </>
   )
