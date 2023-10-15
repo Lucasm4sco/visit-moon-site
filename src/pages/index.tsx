@@ -4,7 +4,7 @@ import SectionExploreTheMoon from "@/components/SectionExploreTheMoon";
 import SectionTextInfinite from "@/components/SectionTextInfinite";
 import SectionGallery from "@/components/SectionGallery";
 import SectionHowToExplore from "@/components/SectionHowToExplore";
-
+import SectionBuyTicket from "@/components/SectionBuyTicket";
 
 export default function Page() {
   return (
@@ -17,6 +17,7 @@ export default function Page() {
         <SectionTextInfinite text="the moon"/>
         <SectionGallery />
         <SectionHowToExplore />
+        <SectionBuyTicket />
       </main>
     </>
   )

@@ -43,7 +43,7 @@ export default function SectionHowToExplore() {
     }
 
     return (
-        <section id="orders" className="pt-60 xl:p-60 pb-60 min-h-full lg:pb-80 overflow-hidden">
+        <section id="orders" className="pt-60 pb-60 p-40 sm:pb-80 min-h-full overflow-hidden">
             <div className="max-w-[1100px] m-auto text-center lg:text-start">
                 <h2 className="text-[3.4rem] lg:text-[5.5rem] text-white font-medium p-2 lg:indent-20">
                     Como visitar a Lua
@@ -138,7 +138,7 @@ export default function SectionHowToExplore() {
                     </li>
                 </ol>
             </div>
-            <div className="container-limit flex flex-row-reverse justify-center xl:hidden pt-40 sm:pt-80 p-5">
+            <div className="container-limit flex flex-row-reverse justify-center xl:hidden pt-40 p-12 sm:pt-80">
                 <div className="w-1/3 flex items-center justify-start">
                     <ol ref={containerMobile} className="relative font-semibold text-[10rem] text-center leading-[5rem]">
                         <li className="relative">
@@ -202,7 +202,7 @@ export default function SectionHowToExplore() {
                             Finalmente a chegada: Ela mudará toda a sua perspectiva sobre a vida
                         </li>
                     </ol>
-                    <img className="-translate-x-1/3 translate-y-1/2 object-contain w-full max-w-[40rem]" src="/img/moon.png" alt="" />
+                    <img className="-translate-x-1/3 translate-y-1/3 object-contain w-full max-w-[40rem]" src="/img/moon.png" alt="" />
                 </div>
             </div>
         </section>
