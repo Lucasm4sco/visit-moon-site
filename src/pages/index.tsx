@@ -5,6 +5,7 @@ import SectionTextInfinite from "@/components/SectionTextInfinite";
 import SectionGallery from "@/components/SectionGallery";
 import SectionHowToExplore from "@/components/SectionHowToExplore";
 import SectionBuyTicket from "@/components/SectionBuyTicket";
+import SectionDepositions from "@/components/SectionDepositions";
 
 export default function Page() {
   return (
@@ -19,6 +20,7 @@ export default function Page() {
         <SectionHowToExplore />
         <SectionBuyTicket />
         <SectionTextInfinite text="to the space"/>
+        <SectionDepositions />
       </main>
     </>
   )
