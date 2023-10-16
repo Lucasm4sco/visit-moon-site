@@ -40,7 +40,7 @@ export default function SectionDepositions() {
                                 </div>
                                 <blockquote className="text-[1.4rem] md:text-[2.4rem]">
                                     <p>
-                                        "{depoiment.depoiment}"
+                                        &quot;{depoiment.depoiment}&quot;
                                     </p>
                                 </blockquote>
                             </div>
