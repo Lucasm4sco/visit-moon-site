@@ -1,8 +1,17 @@
 import { useState, useEffect } from "react"
 import Depoiments from "./depoiments"
 
+const depoimentNames = Depoiments.desktop.map(dep => dep.author);
+
 export default function SectionDepositions() {
     const [depoiments, setDepoiments] = useState<typeof Depoiments.desktop>([]);
+    const [activeHoverName, setActiveHoverName] = useState('');
+
+    const handleMouseEnter = (ticket: typeof depoimentNames[number]) => setActiveHoverName(ticket);
+
+    const handleMouseLeave = () => setActiveHoverName('');
+
+    const hasFocus = (author: typeof depoimentNames[number]) => !activeHoverName ? true : activeHoverName == author;
 
     useEffect(() => {
         const handleDepoiments = () => {
@@ -14,7 +23,7 @@ export default function SectionDepositions() {
 
         handleDepoiments();
         window.addEventListener('resize', handleDepoiments);
-        
+
     }, [])
 
     return (
@@ -27,23 +36,28 @@ export default function SectionDepositions() {
 
             <div className="container-limit pt-10 lg:pt-20 flex justify-center flex-wrap gap-10">
                 {depoiments.map(depoiment => (
-                    <figure key={depoiment.author} className="flex items-center gap-5 sm:gap-10 w-full sm:w-9/12 lg:w-[48%] min-w-[32rem] sm:min-w-[41rem] lg:max-w-[67rem] text-white p-7 border-2 border-gray-theme rounded-[1.1rem]">
-                            <img className="w-2/12 h-full object-contain" src={depoiment.image} alt="" />
-                            <div className="h-full flex flex-col justify-center gap-6 flex-grow">
-                                <div className="flex whitespace-nowrap text-[2rem] sm:text-[2.4rem] xl:text-[3.2rem]">
-                                    <h3>
-                                        {depoiment.author}
-                                    </h3>
-                                    <span className="text-gray-theme indent-2 sm:indent-5">
-                                        {depoiment.user}
-                                    </span>
-                                </div>
-                                <blockquote className="text-[1.4rem] md:text-[2.4rem]">
-                                    <p>
-                                        &quot;{depoiment.depoiment}&quot;
-                                    </p>
-                                </blockquote>
+                    <figure
+                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => handleMouseEnter(depoiment.author)}
+                        key={depoiment.author}
+                        className={`flex items-center gap-5 sm:gap-10 w-full sm:w-9/12 lg:w-[48%] min-w-[32rem] sm:min-w-[41rem] lg:max-w-[67rem] text-white p-7 border-2 border-gray-theme rounded-[1.1rem] opacity-[0.1] ${hasFocus(depoiment.author) ? 'animate-reverse-opacity' : 'animate-opacity'}`}
+                    >
+                        <img className="w-2/12 h-full object-contain" src={depoiment.image} alt="" />
+                        <div className="h-full flex flex-col justify-center gap-6 flex-grow">
+                            <div className="flex whitespace-nowrap text-[2rem] sm:text-[2.4rem] xl:text-[3.2rem]">
+                                <h3>
+                                    {depoiment.author}
+                                </h3>
+                                <span className="text-gray-theme indent-2 sm:indent-5">
+                                    {depoiment.user}
+                                </span>
                             </div>
+                            <blockquote className="text-[1.4rem] md:text-[2.4rem]">
+                                <p>
+                                    &quot;{depoiment.depoiment}&quot;
+                                </p>
+                            </blockquote>
+                        </div>
                     </figure>
                 ))}
             </div>

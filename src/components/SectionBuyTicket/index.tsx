@@ -1,6 +1,17 @@
+import { useState } from "react";
 import tickets from "./tickets";
 
+const ticketsName = tickets.map(ticket => ticket.title);
+
 export default function SectionBuyTicket() {
+    const [activeHoverName, setActiveHoverName] = useState('');
+
+    const handleMouseEnter = (ticket: typeof ticketsName[number]) => setActiveHoverName(ticket);
+    
+    const handleMouseLeave = () => setActiveHoverName('');
+    
+    const hasFocus = (ticket: typeof ticketsName[number]) => !activeHoverName ? true : activeHoverName == ticket;
+
     return (
         <section id="buy-a-ticket" className="pt-60 p-10 pb-40 lg:pb-0">
             <div className="max-w-[1100px] m-auto text-center lg:text-start">
@@ -11,7 +22,12 @@ export default function SectionBuyTicket() {
 
             <div className="container-limit pt-10 lg:pt-20 min-h-[200px] flex justify-center flex-wrap gap-10">
                 {tickets.map(ticket => (
-                    <div key={ticket.title} className="w-full sm:w-1/3 min-w-[32rem] sm:min-w-[41rem] max-w-[44rem] text-white p-5 sm:p-10 border-2 border-gray-theme rounded-[1.1rem]">
+                    <div 
+                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => handleMouseEnter(ticket.title)}
+                        key={ticket.title} 
+                        className={`w-full sm:w-1/3 min-w-[32rem] sm:min-w-[41rem] max-w-[44rem] text-white p-5 sm:p-10 border-2 border-gray-theme rounded-[1.1rem] opacity-[0.1] ${hasFocus(ticket.title) ? 'animate-reverse-opacity' : 'animate-opacity'}`}
+                    >
                         <div className="flex justify-between items-baseline">
                             <h3 className="text-[2.4rem] sm:text-[3.4rem]">{ticket.title}</h3>
                             <p className="text-[2rem] sm:text-[2.4rem]">{ticket.cost.toLocaleString('pt-br', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })}</p>

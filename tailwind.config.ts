@@ -25,7 +25,10 @@ const config: Config = {
         'text-right-1': 'to-right-1 20s linear infinite',
         'text-right-2': 'to-right-2 20s 10s linear infinite',
         // lines
-        'width-full': 'width-full 1s linear forwards'
+        'width-full': 'width-full 1s linear forwards',
+        // generics
+        'opacity': 'opacity .8s ease forwards',
+        'reverse-opacity': 'reverse-opacity .8s ease forwards'
       },
       keyframes: {
         // circles around the moon
@@ -66,6 +69,13 @@ const config: Config = {
         'width-full': {
           '100%': { width: '100%' }
         },
+        // generics
+        'opacity': {
+          '100%': { opacity: '0.1' }
+        },
+        'reverse-opacity': {
+          '100%': { opacity: '1' }
+        }
       }
     },
   },
