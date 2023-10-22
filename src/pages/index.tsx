@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Heading from "@/components/heading/heading";
 import SectionMoonAnimated from "@/components/sections/MoonAnimated";
 import SectionExploreTheMoon from "@/components/sections/ExploreTheMoon";
@@ -11,7 +12,9 @@ import SectionContactUs from "@/components/sections/ContactUs";
 export default function Page() {
   return (
     <>
-      <title>Visit moon</title>
+      <Head>
+        <title>Visit moon</title>
+      </Head>
       <Heading />
       <main>
         <SectionMoonAnimated />
