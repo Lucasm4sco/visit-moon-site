@@ -1,12 +1,12 @@
 import Heading from "@/components/heading/heading";
-import SectionMoonAnimated from "@/components/SectionMoonAnimated";
-import SectionExploreTheMoon from "@/components/SectionExploreTheMoon";
-import SectionTextInfinite from "@/components/SectionTextInfinite";
-import SectionGallery from "@/components/SectionGallery";
-import SectionHowToExplore from "@/components/SectionHowToExplore";
-import SectionBuyTicket from "@/components/SectionBuyTicket";
-import SectionDepositions from "@/components/SectionDepositions";
-import SectionContactUs from "@/components/SectionContactUs";
+import SectionMoonAnimated from "@/components/sections/MoonAnimated";
+import SectionExploreTheMoon from "@/components/sections/ExploreTheMoon";
+import SectionTextInfinite from "@/components/sections/TextInfinite";
+import SectionGallery from "@/components/sections/Gallery";
+import SectionHowToExplore from "@/components/sections/HowToExplore";
+import SectionBuyTicket from "@/components/sections/BuyTicket";
+import SectionDepositions from "@/components/sections/Depositions";
+import SectionContactUs from "@/components/sections/ContactUs";
 
 export default function Page() {
   return (

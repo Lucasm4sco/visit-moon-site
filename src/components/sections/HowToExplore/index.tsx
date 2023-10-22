@@ -1,11 +1,7 @@
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
-const DynamicLines = dynamic(() => import("./Lines"), {
-    ssr: false,
-});
-
-const DynamicLinesMobile = dynamic(() => import("./LinesMobile"), {
+const DynamicLines = dynamic(() => import("@/components/LinesBetweenPoints"), {
     ssr: false,
 });
 
@@ -20,18 +16,22 @@ const stepsDefault = {
 export default function SectionHowToExplore() {
     const [steps, setSteps] = useState(stepsDefault);
     const container = useRef<HTMLDivElement>(null);
-    const ponto1 = useRef<HTMLSpanElement>(null);
-    const ponto2 = useRef<HTMLSpanElement>(null);
-    const ponto3 = useRef<HTMLSpanElement>(null);
-    const ponto4 = useRef<HTMLSpanElement>(null);
+    const points = [
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null)
+    ];
 
     const containerMobile = useRef<HTMLOListElement>(null);
-    const ponto1Mobile = useRef<HTMLSpanElement>(null);
-    const ponto2Mobile = useRef<HTMLSpanElement>(null);
-    const ponto3Mobile = useRef<HTMLSpanElement>(null);
-    const ponto4Mobile = useRef<HTMLSpanElement>(null);
-    const ponto5Mobile = useRef<HTMLSpanElement>(null);
-    const ponto6Mobile = useRef<HTMLSpanElement>(null);
+    const pointsMobile = [
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null),
+        useRef<HTMLSpanElement>(null)
+    ];
 
     const handleSteps = (step: keyof typeof stepsDefault) => setSteps(prev => ({ ...stepsDefault, [step]: !prev[step] }));
 
@@ -60,17 +60,17 @@ export default function SectionHowToExplore() {
                                         Preparação
                                     </span>
                                 </p>
-                                <span ref={ponto1} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-full top-[1.5rem]"></span>
+                                <span ref={points[0]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-full top-[1.5rem]"></span>
                             </button>
                         </li>
                         <li className="relative">
-                            <button className="relative top-[20.5rem]" onClick={() => handleSteps('second')}>
+                            <button className="relative top-[20.5rem] left-1/2" onClick={() => handleSteps('second')}>
                                 <p className={`text-highlighted ${hasFocus('second') ? '' : 'opacity-40'}`}>2
                                     <span className="block text-[2.7rem] font-normal">
                                         Embarque
                                     </span>
                                 </p>
-                                <span ref={ponto2} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-[5rem] -top-1/2"></span>
+                                <span ref={points[1]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-[5rem] -top-1/2"></span>
                             </button>
                         </li>
                         <li className="relative">
@@ -80,7 +80,7 @@ export default function SectionHowToExplore() {
                                         Viagem
                                     </span>
                                 </p>
-                                <span ref={ponto3} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-[4rem] -bottom-[2rem]"></span>
+                                <span ref={points[2]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-[4rem] -bottom-[2rem]"></span>
                             </button>
                         </li>
                         <li className="relative">
@@ -90,11 +90,11 @@ export default function SectionHowToExplore() {
                                         Pousar
                                     </span>
                                 </p>
-                                <span ref={ponto4} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute right-full top-[1.5rem]"></span>
+                                <span ref={points[3]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute right-full top-[1.5rem]"></span>
                             </button>
                         </li>
                     </ol>
-                    <DynamicLines point1={ponto1} point2={ponto2} point3={ponto3} point4={ponto4} container={container} />
+                    <DynamicLines points={points}  container={container}  device="desktop"/>
                 </div>
                 <img className="absolute right-full h-full top-0 -translate-y-[10rem] object-contain hidden xl:inline" src="/img/planet-earth.png" alt="" />
                 <img className="absolute left-full h-1/2 top-1/3 -translate-y-1/3 object-contain hidden xl:inline" src="/img/moon.png" alt="" />
@@ -148,7 +148,7 @@ export default function SectionHowToExplore() {
                                         Preparação
                                     </span>
                                 </p>
-                                <span ref={ponto1Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
+                                <span ref={pointsMobile[0]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
                             </button>
                         </li>
                         <li className="relative  mt-[35.2rem]">
@@ -158,8 +158,8 @@ export default function SectionHowToExplore() {
                                         Embarque
                                     </span>
                                 </p>
-                                <span ref={ponto2Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
-                                <span ref={ponto3Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
+                                <span ref={pointsMobile[1]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
+                                <span ref={pointsMobile[2]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
                             </button>
                         </li>
                         <li className="relative  mt-[35.2rem]">
@@ -169,8 +169,8 @@ export default function SectionHowToExplore() {
                                         Viagem
                                     </span>
                                 </p>
-                                <span ref={ponto4Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
-                                <span ref={ponto5Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
+                                <span ref={pointsMobile[3]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
+                                <span ref={pointsMobile[4]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -bottom-[2rem]"></span>
                             </button>
                         </li>
                         <li className="relative  mt-[35.2rem]">
@@ -180,10 +180,10 @@ export default function SectionHowToExplore() {
                                         Pousar
                                     </span>
                                 </p>
-                                <span ref={ponto6Mobile} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
+                                <span ref={pointsMobile[5]} className="inline-block h-[14px] w-[14px] bg-white rounded-full absolute left-1/2 -translate-x-1/2 -top-[6rem]"></span>
                             </button>
                         </li>
-                        <DynamicLinesMobile point1={ponto1Mobile} point2={ponto2Mobile} point3={ponto3Mobile} point4={ponto4Mobile} point5={ponto5Mobile} point6={ponto6Mobile} container={containerMobile} />
+                        <DynamicLines points={pointsMobile} container={containerMobile} device="mobile" />
                     </ol>
                 </div>
                 <div className="flex-grow flex flex-col justify-center items-center">
