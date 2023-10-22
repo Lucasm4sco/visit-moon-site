@@ -43,9 +43,7 @@ const animateLines = ({ points, lines, container }: connectLinesArgs) => {
     const isElementOnScreen = positionElement && positionElement < 200 && !lines.current?.innerHTML.trim();
 
     if (isElementOnScreen) {
-        lines.current.classList.remove('animate-width-full');
         connectLines({ points, lines, container });
-        lines.current.classList.add('animate-width-full');
     }
 }
 

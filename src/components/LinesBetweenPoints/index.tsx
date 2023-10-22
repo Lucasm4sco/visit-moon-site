@@ -13,25 +13,26 @@ export default function LinesBetweenPoints({ container, points, device }: LinesB
     const lines = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const hasNullValues = container.current == null || lines.current == null || points.some(point => point.current == null);
+        
+        if (hasNullValues)
+            return
+
         const buildLines = () => {
-            const hasNullValues = container.current == null || lines.current == null || points.some(point => point.current == null);
-
-            if (hasNullValues)
-                return
-
+            // @ts-ignore
             lines.current.innerHTML = '';
             devices.connectLines({ points, container, lines });
         };
 
         const animateLines = () => devices.animateLines({ points, container, lines });
 
-        buildLines();
-        window.addEventListener('resize', buildLines);
+        devices.connectLines({ points, container, lines });
         window.addEventListener('scroll', animateLines);
-        
+        window.addEventListener('resize', buildLines);
+
         return () => {
-            window.removeEventListener('resize', buildLines);
             window.removeEventListener('scroll', animateLines);
+            window.removeEventListener('resize', buildLines);
         }
     }, [container, points, lines])
 
